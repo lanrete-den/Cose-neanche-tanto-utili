@@ -1,70 +1,40 @@
 #include <iostream>
-
 #include<cstdlib>
-
-#include<time.h>
-
-#include<stdlib.h>
-
-
+#include<ctime>
 
 using namespace std;
-
-
 
 int main()
 
 {
-
-   int dado = 0; //il dado e basta.
-   
-   int dado1 = 0; //variabile a cui assegno il numero del lancio precedente.
-
+   int dado = 0; //il dado è non tratto
    int y = 0; //Numero di volte per cui il numero appare di seguito.
-
-   int lanci = 0; //i lanci lmao
-
-   
-
+   int lanci = 0, dado_conc=0; //il dado che conc
    cout << " Questo programma lancia un dado numerose volte, finche' non ottiene cinque num. uguali di seguito.";
-
    cout << "\n Sotto vedrai riportato il numero di lanci effettuati.\n";
-
    srand(time(0));
-
-    
-
    while (y < 4)
 
       {
-
         int aux = rand();
-
         dado = (aux % 6) + 1;
-
         cout<<" "<<dado<<" ";
-        
-        if (dado==dado1)
+        if (dado==dado_conc)
         { 
+        	cout<<endl;
+        	dado=0;
         	y++;
         }
-    	else 
+    	else if (dado!=dado_conc) 
 		{
-        	y=0;
-		} 
-		dado = dado1;
+        	dado_conc=dado;             //dado conc uguale al daddino
+        	y=1;
+		}
         lanci++; 
       } 
-
-      
-
    cout << "\nLanci effettuati : " << lanci << endl; 
-
-
-   system("PAUSE"); // ns. comodo!
-
    return 0;
 
-} // end main()
+} // end sta minchia
 
     
