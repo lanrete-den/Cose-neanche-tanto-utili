@@ -34,7 +34,7 @@ int main()
 
     
 
-   while (y < 1)
+   while (y < 4)
 
       {
 
